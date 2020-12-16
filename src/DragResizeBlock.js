@@ -663,6 +663,18 @@ export class DragResizeBlock extends Component {
     } = this.state;
 
     return connectors.map((connectorType) => {
+      if(connectorType === CONNECTOR_CENTER) {
+        <CenterConnector 
+          key={connectorType}
+          type={connectorType}
+          size={CONNECTOR_SIZE}
+          x={this.connectorsMap[CONNECTOR_TOP_LEFT].calculateX(w)}
+          y={this.connectorsMap[CONNECTOR_TOP_LEFT].calculateY(h)}
+          onStart={this.connectorsMap[connectorType].onStart}
+          onMove={this.connectorsMap[connectorType].onMove}
+          onEnd={this.connectorsMap[connectorType].onEnd}
+        >{centerButton}</CenterConnector>
+      }
       return (
         <Connector
           key={connectorType}
