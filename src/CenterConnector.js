@@ -77,21 +77,22 @@ export class CenterConnector extends Component {
     const {
       x,
       y,
-      centerButton,
+      children,
     } = this.props;
 
     return (
-      <View
-        style={{
-          position: 'absolute',
-          left: x + 6,
-          top: y + 6,
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'transparent',
-        }}
-        {...this._panResponder.panHandlers}
-      >
+      <>
+        <View
+          style={{
+            position: 'absolute',
+            left: x + 6,
+            top: y + 6,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'transparent',
+          }}
+          {...this._panResponder.panHandlers}
+        />
         <View
           style={{
           position: 'absolute',
@@ -99,14 +100,14 @@ export class CenterConnector extends Component {
           top: y + 6,
           width: '100%',
           height: '100%',
-          backgroundColor: 'transparent',
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
+          zIndex: 2
         }}>
-          {centerButton()}
+        {children}
         </View>
-      </View>
+      </>
     );
   }
 }
