@@ -77,7 +77,7 @@ export class CenterConnector extends Component {
     const {
       x,
       y,
-      size,
+      centerButton,
     } = this.props;
 
     return (
@@ -89,15 +89,23 @@ export class CenterConnector extends Component {
           width: '100%',
           height: '100%',
           backgroundColor: 'transparent',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
         }}
         {...this._panResponder.panHandlers}
       >
-        <TouchableOpacity>
-          <SvgXml xml={} width={25} height={25} />
-        </TouchableOpacity>
+        <View
+          style={{
+          position: 'absolute',
+          left: x + 6,
+          top: y + 6,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'transparent',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          {centerButton()}
+        </View>
       </View>
     );
   }
