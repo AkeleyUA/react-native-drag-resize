@@ -109,8 +109,9 @@ export class Connector extends Component {
           width: size,
           height: size,
           borderRadius: 50,
-          backgroundColor: 'white'
+          backgroundColor: 'white',
         }}
+        hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}
         {...this._panResponder.panHandlers}
       />
     );
