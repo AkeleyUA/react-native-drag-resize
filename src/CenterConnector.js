@@ -77,18 +77,19 @@ export class CenterConnector extends Component {
     const {
       x,
       y,
+      centerX,
+      centerY,
       children,
     } = this.props;
-
     return (
       <>
         <View
           style={{
             position: 'absolute',
-            left: x + 6,
-            top: y + 6,
-            width: '100%',
-            height: '100%',
+            left: 20,
+            top: 20,
+            right: 20,
+            bottom: 20,
             backgroundColor: 'transparent',
           }}
           {...this._panResponder.panHandlers}
@@ -96,16 +97,12 @@ export class CenterConnector extends Component {
         <View
           style={{
           position: 'absolute',
-          left: x + 6,
-          top: y + 6,
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          left: centerX - 6,
+          top: centerY - 6,
+          backgroundColor: 'transparent',
           zIndex: 2
         }}>
-        {children}
+          {children}
         </View>
       </>
     );
