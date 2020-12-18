@@ -674,6 +674,8 @@ export class DragResizeBlock extends Component {
             size={CONNECTOR_SIZE}
             x={this.connectorsMap[CONNECTOR_TOP_LEFT].calculateX(w)}
             y={this.connectorsMap[CONNECTOR_TOP_LEFT].calculateY(h)}
+            centerX={this.connectorsMap[CONNECTOR_CENTER].calculateX(w)}
+            centerY={this.connectorsMap[CONNECTOR_CENTER].calculateY(h)}
             onStart={this.connectorsMap[connectorType].onStart}
             onMove={this.connectorsMap[connectorType].onMove}
             onEnd={this.connectorsMap[connectorType].onEnd}
